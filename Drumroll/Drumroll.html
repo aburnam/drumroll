@@ -1,44 +1,30 @@
 <html>
 	<head>
 	</head>
-	<body>
+	<body onclick="play()">
 	<script>
-		// Fix up prefixing
-		window.AudioContext = window.AudioContext || window.webkitAudioContext;
-		var context = new AudioContext();
-
-		function loadSound(url) {
-		  var request = new XMLHttpRequest();
-		  request.open('GET', url, true);
-		  request.responseType = 'arraybuffer';
-
-		  // Decode asynchronously
-		  request.onload = function() {
-			context.decodeAudioData(request.response, function(buffer) {
-			  soundBuffer = buffer;
-			}, onError);
-		  }
-		  request.send();
+		var clip = "808";
+		var index = 0;
+		var clips = ["808", "808-2", "AcousticHiht", "AwesomeSnare", "AwesomeTom", "BirthDayBrass", "Chant", "Clap", "Clap2", "Crash", "Cymbal", "DigitalKick", "DigitalKick2", "DigitalKick3", "DigitalKick4", "FirstHihat", "Fx", "HandsUpClap", "HiHt2", "HitHt", "HitHt3", "J808", "Kick(PutWitSub)", "Kick", "NewFx", "NewFx2", "NewSoundFX", "NewTrianglePerc", "OpenHat", "OpenHat2", "OpenHat3", "Perc", "RacksOnRacksChant", "RacksOnRacksTom", "Ride","RimShtClean", "SameDamnTimeKick", "SineBeep", "Snap", "Snare", "Snare2", "TM88TrapClap", "Trap808", "TrapClap", "TrapPerc", "TrappinChant", "TrapRimSht", "WindFx"];
+		
+		window.onload = function(){
+			document.getElementById("title").innerHTML = clip;
 		}
-
-		function playSound(buffer) {
-		  var source = context.createBufferSource(); // creates a sound source
-		  source.buffer = buffer;                    // tell the source which sound to play
-		  source.connect(context.destination);       // connect the source to the context's destination (the speakers)
-		  source.start(0);                           // play the source now
-													 // note: on older systems, may have to use deprecated noteOn(time);
-		}
-	</script>
-	<script>
+		
 		function play(){
-		var audio = document.getElementById("audio");
+		var audio = new Audio('resources/' + clip + '.wav');
 		audio.play();
 		}
+		
+		window.addEventListener('contextmenu', function() {
+			index++;
+			if (index == clips.length){
+				index = 0;
+			}
+			clip = clips[index];
+			document.getElementById("title").innerHTML = clip;
+		}, false);
 	</script>
-	<p style="font-size: 100px;">Hello bitches</p>
-	<button onclick=loadSound("~/resources/CP.mp3")>Push for loadz</button>
-	<button onclick=playSound()>Push for clapz</button>
-	<input type="button" value="PLAY" onclick="play()">
-	<audio id="audio" src="resources/CP.mp3"></audio>
+	<a id="title" style="font-size: 100px;"></a>
 	</body>
 </html>
