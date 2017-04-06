@@ -1,0 +1,50 @@
+#container{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#head{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+img{
+    height: 400px;
+    width: 450px;
+}
+
+#timer{
+    align-self: flex-end;
+}
+
+h3{
+    text-align: left;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#cycle{
+    background-color: darkorchid;
+    color: white;
+    flex-grow: 1;
+}
+
+#img{
+    flex-grow: 2;
+    background-color: darkturquoise;
+}
+
+#picture{
+    display: block;
+    margin: auto;
+}
