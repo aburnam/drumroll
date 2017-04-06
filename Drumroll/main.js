@@ -44,8 +44,7 @@ function timer(){
             secs--; 
             document.getElementById("time").innerHTML = "00:" + n(secs);
             if(secs == 0){
-                document.getElementById("time").innerHTML = "00:00";
-                document.getElementById("timer").innerHTML = "Time's up! Starting another loop.";
+                document.getElementById("time").innerHTML = "00:00<br>Time's up! Starting another loop.";
             }
         }, 1000)
     }
@@ -53,11 +52,16 @@ function timer(){
 }
 
 function n(n){
-    if(n < 10){
-        return "0" + n;
+    if(n >= 0){
+        if(n < 10){
+            return "0" + n;
+        }
+        else{
+            return n;
+        }
     }
     else{
-        return n;
+        return "00"
     }
 }
 
@@ -65,6 +69,5 @@ function glow(){
     document.getElementsByTagName("img")[0].style.boxShadow = "10px 10px 5px white";
     var s = setTimeout(function(){
         document.getElementsByTagName("img")[0].style.boxShadow = "0px 0px 0px white";    
-    }, 100)
-    
+    }, 100)   
 }
