@@ -1,0 +1,63 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+body{
+    //background: #e8effc
+    background-image: url("sushi.jpg");
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+    
+}
+
+h1{
+    margin-top: 0;
+    padding: 0px;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 100px;
+    color: cornflowerblue;
+}
+
+h2{
+    margin-top: 0;
+    padding: 0px;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 40px;
+    color: #154eb7;
+}
+
+img{
+    /*position: absolute;*/
+    height: 200px;
+    width: 225px;
+    display: block;
+    margin: auto;
+    margin-top: 0;
+    /*object-position: center;*/
+}
+
+h3{
+    margin-top: 0;
+    padding: 0px;
+    text-align: left;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #154eb7;
+}
+
+#cycle{
+    flex-grow: 1;
+}
+
+#visual{
+    flex-grow: 2;
+}
+
+canvas{
+	position: fixed;
+    width: 100%;
+	height: 100%;
+}
